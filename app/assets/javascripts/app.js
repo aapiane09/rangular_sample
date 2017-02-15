@@ -1,1 +1,1 @@
-angular.module('rangularApp', ['ngRoute']);
+angular.module('rangularApp', ['ngRoute', 'templates']);
