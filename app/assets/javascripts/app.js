@@ -21,14 +21,14 @@ function config (  $routeProvider,   $locationProvider  )  {
   });
 };
 
-HomeIndexController.$inject=[];
-function HomeIndexController() {
+HomeIndexController.$inject=["$http"];
+function HomeIndexController($http) {
   var vm = this;
   vm.greeting = "what's up?"
 
   $http({
     method: 'GET',
-    url: baseUrl + '/api/todos'
+    url: '/api/todos'
   }).then(function successCallback(response) {
     console.log('response for all projects:', response);
     // probably do something with the response data
