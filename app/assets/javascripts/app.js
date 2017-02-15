@@ -25,4 +25,14 @@ HomeIndexController.$inject=[];
 function HomeIndexController() {
   var vm = this;
   vm.greeting = "what's up?"
+
+  $http({
+    method: 'GET',
+    url: baseUrl + '/api/todos'
+  }).then(function successCallback(response) {
+    console.log('response for all projects:', response);
+    // probably do something with the response data
+  }, function errorCallback(error) {
+    console.log('There was an error getting the data', error);
+  });
 };
